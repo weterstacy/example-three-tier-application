@@ -18,6 +18,8 @@ Browser → Web (Next.js :3000) → API (Express :3001) → PostgreSQL
 
 The app is a simple task manager (to-do list) that demonstrates how the three tiers communicate.
 
+📖 **See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for a detailed explanation of the three-tier architecture pattern.**
+
 ## Running locally with Docker Compose
 
 ### Prerequisites
