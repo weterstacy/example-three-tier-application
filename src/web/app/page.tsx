@@ -6,9 +6,14 @@ export default async function Home() {
   return (
     <div className="min-h-screen bg-zinc-50 dark:bg-zinc-900 py-16 px-4">
       <div className="max-w-lg mx-auto">
-        <h1 className="text-3xl font-bold text-zinc-900 dark:text-zinc-50 mb-8">
-          To-Do List
-        </h1>
+        <div className="flex items-center gap-3 mb-8">
+          <h1 className="text-3xl font-bold text-red-600 dark:text-red-500">
+            To-Do List
+          </h1>
+          <span className="bg-red-100 dark:bg-red-900 text-red-800 dark:text-red-200 text-xs font-semibold px-2 py-1 rounded">
+            Preview test
+          </span>
+        </div>
 
         {/* Add task form */}
         <form action={createTask} className="flex gap-2 mb-8">
