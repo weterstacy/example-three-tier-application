@@ -66,6 +66,29 @@ The API is not exposed directly, but you can reach it through the web container 
 | POST | `/tasks` | Create a task (`{ "title": "..." }`) |
 | PATCH | `/tasks/:id` | Update a task (`{ "completed": true }` or `{ "title": "..." }`) |
 
+## Running the tests
+
+### Frontend tests
+
+The frontend has Jest tests for utility functions. To run them:
+
+```bash
+cd src/web
+npm install
+npm test
+```
+
+For watch mode or coverage:
+
+```bash
+npm run test:watch    # Re-run tests on file changes
+npm run test:coverage # Generate coverage report
+```
+
+### Backend tests
+
+The API does not currently have tests.
+
 ## Project structure
 
 ```
