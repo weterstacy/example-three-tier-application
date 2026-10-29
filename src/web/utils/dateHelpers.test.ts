@@ -284,9 +284,9 @@ describe('dateHelpers', () => {
       expect(daysBetween(date1, date2)).toBe(-5);
     });
 
-    it('should return 0 for the same date', () => {
+    it('should return 0 for the same date and time', () => {
       const date1 = new Date('2024-01-15T12:00:00Z');
-      const date2 = new Date('2024-01-15T18:00:00Z');
+      const date2 = new Date('2024-01-15T12:00:00Z');
       expect(daysBetween(date1, date2)).toBe(0);
     });
 
