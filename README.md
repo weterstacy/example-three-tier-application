@@ -142,3 +142,4 @@ cd src/web
 npm install
 npm test
 ```
+Maintained by the platform team.
