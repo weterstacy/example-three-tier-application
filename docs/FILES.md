@@ -117,4 +117,4 @@ The source tree is organized into four main sections:
 3. **Infrastructure**: Terraform IaC for GCP deployment with Cloud Run and Cloud SQL
 4. **Web Application**: Next.js frontend with TypeScript, Tailwind CSS, and comprehensive testing
 
-Total file count: **57 files** across all directories under `src/`.
+Total file count: **46 files** across all directories under `src/`.
