@@ -135,7 +135,7 @@ When running via Docker Compose the `migrate` service handles this automatically
 
 ### Frontend tests
 
-The frontend tests use Jest.
+The frontend tests use Jest and `npm test` runs the Jest frontend test suite.
 
 ```bash
 cd src/web
