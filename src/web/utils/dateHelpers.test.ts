@@ -269,6 +269,10 @@ describe('dateHelpers', () => {
     it('should throw an error for invalid date', () => {
       expect(() => addDays('invalid', 5)).toThrow('Invalid date');
     });
+
+    it('should throw an error for NaN date', () => {
+      expect(() => addDays(new Date(NaN), 1)).toThrow('Invalid date');
+    });
   });
 
   describe('daysBetween', () => {
