@@ -5,6 +5,7 @@ import {
   isToday,
   isPast,
   isFuture,
+  isWeekend,
   addDays,
   daysBetween,
   formatTime,
@@ -227,6 +228,64 @@ describe('dateHelpers', () => {
 
     it('should throw an error for invalid date', () => {
       expect(() => isFuture('invalid')).toThrow('Invalid date');
+    });
+  });
+
+  describe('isWeekend', () => {
+    it('should return true for Saturday', () => {
+      const saturday = new Date('2024-01-13T12:00:00Z'); // Saturday
+      expect(isWeekend(saturday)).toBe(true);
+    });
+
+    it('should return true for Sunday', () => {
+      const sunday = new Date('2024-01-14T12:00:00Z'); // Sunday
+      expect(isWeekend(sunday)).toBe(true);
+    });
+
+    it('should return false for Monday', () => {
+      const monday = new Date('2024-01-15T12:00:00Z'); // Monday
+      expect(isWeekend(monday)).toBe(false);
+    });
+
+    it('should return false for Tuesday', () => {
+      const tuesday = new Date('2024-01-16T12:00:00Z'); // Tuesday
+      expect(isWeekend(tuesday)).toBe(false);
+    });
+
+    it('should return false for Wednesday', () => {
+      const wednesday = new Date('2024-01-17T12:00:00Z'); // Wednesday
+      expect(isWeekend(wednesday)).toBe(false);
+    });
+
+    it('should return false for Thursday', () => {
+      const thursday = new Date('2024-01-18T12:00:00Z'); // Thursday
+      expect(isWeekend(thursday)).toBe(false);
+    });
+
+    it('should return false for Friday', () => {
+      const friday = new Date('2024-01-19T12:00:00Z'); // Friday
+      expect(isWeekend(friday)).toBe(false);
+    });
+
+    it('should accept date strings', () => {
+      expect(isWeekend('2024-01-13T12:00:00Z')).toBe(true); // Saturday
+      expect(isWeekend('2024-01-14T12:00:00Z')).toBe(true); // Sunday
+      expect(isWeekend('2024-01-15T12:00:00Z')).toBe(false); // Monday
+    });
+
+    it('should handle weekend at different times of day', () => {
+      const saturdayMorning = new Date('2024-01-13T00:00:00Z');
+      const saturdayEvening = new Date('2024-01-13T23:59:59Z');
+      expect(isWeekend(saturdayMorning)).toBe(true);
+      expect(isWeekend(saturdayEvening)).toBe(true);
+    });
+
+    it('should throw an error for invalid date', () => {
+      expect(() => isWeekend('invalid')).toThrow('Invalid date');
+    });
+
+    it('should throw an error for invalid Date object', () => {
+      expect(() => isWeekend(new Date('invalid'))).toThrow('Invalid date');
     });
   });
 
