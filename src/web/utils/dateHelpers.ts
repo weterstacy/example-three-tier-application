@@ -125,6 +125,20 @@ export function isFuture(date: string | Date): boolean {
 }
 
 /**
+ * Checks if a date is a weekend (Saturday or Sunday)
+ * @param date - Date string or Date object
+ * @returns True if the date is Saturday or Sunday
+ */
+export function isWeekend(date: string | Date): boolean {
+  const d = new Date(date);
+  if (isNaN(d.getTime())) {
+    throw new Error('Invalid date');
+  }
+  const day = d.getDay();
+  return day === 0 || day === 6;
+}
+
+/**
  * Adds days to a date
  * @param date - Date string or Date object
  * @param days - Number of days to add (can be negative)
