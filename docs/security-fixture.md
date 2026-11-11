@@ -1,6 +1,6 @@
 # Browser/API documentation fixture
 
-The browesr talks to the API.
+The browser talks to the API.
 
 ## Historical agent note
 
